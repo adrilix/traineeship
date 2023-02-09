@@ -61,8 +61,7 @@
     }
   
     padStart(str){
-        const newString= str.split("").concat(this.value).join("");
-        this.value = newString
+        this.value = str + this.value;
     }
 
     padBoth(str){
