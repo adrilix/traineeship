@@ -212,49 +212,106 @@
 //   console.log(User.isEmailTaken("poly@mail.com"));
 //   console.log(User.isEmailTaken("mango@mail.com"));
 //   console.log(User.getAllEmails());
-class User {
-    email;
+// class User {
+//     email;
   
-    constructor(email) {
-      this.email = email;
-    }
+//     constructor(email) {
+//       this.email = email;
+//     }
   
-    get email() {
-      return this.email;
-    }
+//     get email() {
+//       return this.email;
+//     }
   
-    set email(newEmail) {
-      this.email = newEmail;
-    }
-  }
-  class Admin extends User {
+//     set email(newEmail) {
+//       this.email = newEmail;
+//     }
+//   }
+//   class Admin extends User {
     // Change code below this line
-    blacklistedEmails = [];
-    static AccessLevel = {
-      BASIC: "basic",
-      SUPERUSER: "superuser",
-    };
+  //   blacklistedEmails = [];
+  //   static AccessLevel = {
+  //     BASIC: "basic",
+  //     SUPERUSER: "superuser",
+  //   };
   
-    constructor({ email, accessLevel }) {
-      super(email);
-      this.accessLevel = accessLevel;
-    }
+  //   constructor({ email, accessLevel }) {
+  //     super(email);
+  //     this.accessLevel = accessLevel;
+  //   }
   
-    isBlacklisted(email){
-      return blacklistedEmails.includes(email)
-    }
-    // Change code above this line
-  }
+  //   isBlacklisted(email){
+  //     return blacklistedEmails.includes(email)
+  //   }
+  //   // Change code above this line
+  // }
   
-  const mango = new Admin({
-    email: "mango@mail.com",
-    accessLevel: Admin.AccessLevel.SUPERUSER,
-  });
+  // const mango = new Admin({
+  //   email: "mango@mail.com",
+  //   accessLevel: Admin.AccessLevel.SUPERUSER,
+  // });
   
-  console.log(mango.email); // "mango@mail.com"
-  console.log(mango.accessLevel); // "superuser"
+  // console.log(mango.email); // "mango@mail.com"
+  // console.log(mango.accessLevel); // "superuser"
   
-  mango.blacklist("poly@mail.com");
-  console.log(mango.blacklistedEmails); // ["poly@mail.com"]
-  console.log(mango.isBlacklisted("mango@mail.com")); // false
-  console.log(mango.isBlacklisted("poly@mail.com")); // true
+  // mango.blacklist("poly@mail.com");
+  // console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+  // console.log(mango.isBlacklisted("mango@mail.com")); // false
+  // console.log(mango.isBlacklisted("poly@mail.com")); // true
+
+  //////////////////////////////////////////////////
+//   function maskify(cc) {
+//     const stringToArray = cc.split("");
+//     if (stringToArray.length>4){
+
+//       for (let index = 0; index < stringToArray.length-4; index+=1) {
+//         stringToArray[index]="#";
+//     }
+//     return stringToArray.join("");
+      
+//     }
+//     else return stringToArray.join("")
+//   }
+  
+
+
+// maskify('4556364607935616')
+// maskify('1')
+// maskify('11111')
+// const article = document.querySelector('article[data-marker="all"]');
+// console.log(article.innerHTML);
+// console.log(article.textContent);
+
+// const title = document.querySelector(".article .title");
+// console.log(title.innerHTML);
+
+// const text = document.querySelector(".article .text");
+// console.log(text.innerHTML);
+
+// const link = document.querySelector(".article .link");
+// console.log(link.innerHTML);
+
+const listWithId = document.querySelector('#menu');
+listWithId.style.textTransform = 'uppercase';
+listWithId.style.fontSize = '24px';
+console.log(listWithId);
+
+const listWithClass = document.querySelector('.menu');
+console.log(listWithClass);
+
+const menuItemsByTagName = document.querySelectorAll("li");
+console.log(menuItemsByTagName);
+
+const menuItemsByClass = document.querySelectorAll(".menu-item");
+console.log(menuItemsByClass);
+
+const firstMenuItem = document.querySelector(".menu-item");
+firstMenuItem.style.color = 'tomato';
+console.log(firstMenuItem);
+
+const lastItem = menuItemsByTagName[menuItemsByTagName.length -1];
+console.log(lastItem);
+lastItem.classList.add('lastItem');
+console.log(lastItem.classList.contains('lastItem'));
+lastItem.style.color = 'green'
+
