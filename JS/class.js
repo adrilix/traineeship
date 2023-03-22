@@ -291,27 +291,46 @@
 // const link = document.querySelector(".article .link");
 // console.log(link.innerHTML);
 
-const listWithId = document.querySelector('#menu');
-listWithId.style.textTransform = 'uppercase';
-listWithId.style.fontSize = '24px';
-console.log(listWithId);
+// const listWithId = document.querySelector('#menu');
+// listWithId.style.textTransform = 'uppercase';
+// listWithId.style.fontSize = '24px';
+// console.log(listWithId);
 
-const listWithClass = document.querySelector('.menu');
-console.log(listWithClass);
+// const listWithClass = document.querySelector('.menu');
+// console.log(listWithClass);
 
-const menuItemsByTagName = document.querySelectorAll("li");
-console.log(menuItemsByTagName);
+// const menuItemsByTagName = document.querySelectorAll("li");
+// console.log(menuItemsByTagName);
 
-const menuItemsByClass = document.querySelectorAll(".menu-item");
-console.log(menuItemsByClass);
+// const menuItemsByClass = document.querySelectorAll(".menu-item");
+// console.log(menuItemsByClass);
 
-const firstMenuItem = document.querySelector(".menu-item");
-firstMenuItem.style.color = 'tomato';
-console.log(firstMenuItem);
+// const firstMenuItem = document.querySelector(".menu-item");
+// firstMenuItem.style.color = 'tomato';
+// console.log(firstMenuItem);
 
-const lastItem = menuItemsByTagName[menuItemsByTagName.length -1];
-console.log(lastItem);
-lastItem.classList.add('lastItem');
-console.log(lastItem.classList.contains('lastItem'));
-lastItem.style.color = 'green'
+// const lastItem = menuItemsByTagName[menuItemsByTagName.length -1];
+// console.log(lastItem);
+// lastItem.classList.add('lastItem');
+// console.log(lastItem.classList.contains('lastItem'));
+// lastItem.style.color = 'green'
+const select = document.querySelector(".pizza-select");
+const textOutput = document.querySelector(".text-output");
+const valueOutput = document.querySelector(".value-output");
 
+setOutput();
+
+select.addEventListener("change", setOutput);
+
+function setOutput() {
+  const selectedOptionValue = select.value;
+  const selectedOptionIndex = select.selectedIndex;
+  const selectedOptionText = select.options[selectedOptionIndex].text;
+
+  textOutput.textContent = selectedOptionText;
+  valueOutput.textContent = selectedOptionValue;
+  console.log(select.value);
+  console.log(select.selectedIndex);
+  console.log(select.options);
+}
+console.log(select.value);

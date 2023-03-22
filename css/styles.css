@@ -1,0 +1,18 @@
+body {
+    margin: 16px;
+    background-color: #bfbeb7;
+  }
+  
+  select {
+    padding: 4px;
+    color : rgb(0, 0, 0);
+    background-color : aqua;
+  }
+
+  .foto {
+    width: 356px;
+    height: 200 px;
+    display: flex;
+    border-color: red;
+    border: 4px;
+  }
