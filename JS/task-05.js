@@ -7,6 +7,7 @@ const emptyInputData = 'Anonymous';
 inputValue.addEventListener('input', (e)=>{
 
     outputName.textContent=e.currentTarget.value
+    
     if (e.currentTarget.value === ''){
         outputName.textContent=emptyInputData;
     }

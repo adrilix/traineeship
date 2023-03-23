@@ -14,9 +14,12 @@ const images = [
 ];
 
 const gallery = document.querySelector('.gallery');
+gallery.style.display="flex";
+
 const markup = images.map(({alt,url}) => {
-        return(`<li ><img class="foto" src = ${url} width = "320" heigth = "240" alt = ${alt}/></li>`);
+        return `<li ><img class ="foto" src = ${url}  alt = ${alt} width = '400' height = '300' ></li>`;
 })
 .join("");
-console.log(markup);
+
 gallery.insertAdjacentHTML("beforeend", markup);
+
