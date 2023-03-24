@@ -4,27 +4,47 @@
 
 // Розміри найпершого <div> - 30px на 30px.
 
+// Кожен елемент після першого повинен бути ширшим і вищим від попереднього на 10px.
+
+// Всі елементи повинні мати випадковий колір фону у форматі HEX. Використовуй готову функцію getRandomHexColor для отримання кольору.
+
 const controls = document.querySelector('#controls');
-const input = controls.firstElementChild;
+const input = document.querySelector('input');
 const btnCreate = document.querySelector('button[data-create]');
 const btnDestroy = document.querySelector('button[data-destroy]');
 const divBoxes = document.querySelector('#boxes');
 
 btnCreate.addEventListener('click', createBoxes);
-// btnDestroy.addEventListener('click', destroyBoxes);
-// const boxes = document.createElement('div')
+btnDestroy.addEventListener('click', destroyBoxes);
+const boxes = document.createElement('div')
+boxes.style.display = "inline-flex";
+boxes.style.gap = "5px";
 
 function createBoxes(){
-  const amount = input.value;
-
+  let amount = input.value;
+  
   for (let index = 0; index < amount; index +=1) {
+  
     const box = document.createElement('div');
-    // boxes.append(box);
-    console.log(boxes);
+
+    box.style.width = String( 30 + 10 * index ) + 'px';
+    box.style.height= String( 30 + 10 * index ) + 'px';
+    box.style.backgroundColor = getRandomHexColor();
+    boxes.append(box);
   }
-  // divBoxes append(...boxes);
+  divBoxes.innerHTML='';
+  
+  divBoxes.append(boxes);
+ 
+  input.value = '';
+
 }
 
+function destroyBoxes(){
+  divBoxes.innerHTML='';
+  boxes.innerHTML='';
+
+  }
 
 
 
