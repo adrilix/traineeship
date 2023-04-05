@@ -314,23 +314,68 @@
 // lastItem.classList.add('lastItem');
 // console.log(lastItem.classList.contains('lastItem'));
 // lastItem.style.color = 'green'
-const select = document.querySelector(".pizza-select");
-const textOutput = document.querySelector(".text-output");
-const valueOutput = document.querySelector(".value-output");
+// const select = document.querySelector(".pizza-select");
+// const textOutput = document.querySelector(".text-output");
+// const valueOutput = document.querySelector(".value-output");
 
-setOutput();
+// setOutput();
 
-select.addEventListener("change", setOutput);
+// select.addEventListener("change", setOutput);
 
-function setOutput() {
-  const selectedOptionValue = select.value;
-  const selectedOptionIndex = select.selectedIndex;
-  const selectedOptionText = select.options[selectedOptionIndex].text;
+// function setOutput() {
+//   const selectedOptionValue = select.value;
+//   const selectedOptionIndex = select.selectedIndex;
+//   const selectedOptionText = select.options[selectedOptionIndex].text;
 
-  textOutput.textContent = selectedOptionText;
-  valueOutput.textContent = selectedOptionValue;
-  console.log(select.value);
-  console.log(select.selectedIndex);
-  console.log(select.options);
-}
-console.log(select.value);
+//   textOutput.textContent = selectedOptionText;
+//   valueOutput.textContent = selectedOptionValue;
+//   console.log(select.value);
+//   console.log(select.selectedIndex);
+//   console.log(select.options);
+// }
+// console.log(select.value);
+// const colorPalette = document.querySelector(".color-palette");
+// const output = document.querySelector(".output");
+
+// colorPalette.addEventListener("click", selectColor);
+
+// // This is where delegation «magic» happens
+// function selectColor(event) {
+//   if (event.target.nodeName !== "BUTTON") {
+//     return;
+//   }
+
+//   const selectedColor = event.target.dataset.color;
+//   output.textContent = `Selected color: ${selectedColor}`;
+//   output.style.color = selectedColor;
+// }
+
+// // Some helper functions to render palette items
+// createPaletteItems();
+
+// function createPaletteItems() {
+//   const items = [];
+//   for (let i = 0; i < 10; i++) {
+//     const color = getRandomColor();
+//     const item = document.createElement("button");
+//     item.type = "button";
+//     item.dataset.color = color;
+//     item.style.backgroundColor = color;
+//     item.classList.add("item");
+//     items.push(item);
+//   }
+//   colorPalette.append(...items);
+// }
+
+// function getRandomColor() {
+//   return `#${getRandomHex()}${getRandomHex()}${getRandomHex()}`;
+// }
+
+// function getRandomHex() {
+//   return Math.round(Math.random() * 256)
+//     .toString(16)
+//     .padStart(2, "0");
+// }
+
+// const result = _.add(2, 3);
+// console.log(result); // 5
